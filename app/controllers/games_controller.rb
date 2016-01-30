@@ -15,6 +15,11 @@ class GamesController < ApplicationController
   # GET /games/new
   def new
     @game = Game.new
+    if @game.save
+      redirect_to @game
+    else
+      redirect_to root_url, notice: 'Something went wrong'
+    end
   end
 
   # GET /games/1/edit
