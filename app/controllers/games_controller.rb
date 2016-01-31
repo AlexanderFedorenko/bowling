@@ -8,8 +8,8 @@ class GamesController < ApplicationController
   end
 
   # GET /games/1
-  # GET /games/1.json
   def show
+    @throw = Throw.new
   end
 
   # GET /games/new
@@ -74,6 +74,6 @@ class GamesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def game_params
-      params.require(:game).permit(:total)
+      params.require(:game)
     end
 end

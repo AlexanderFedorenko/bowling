@@ -11,12 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160130125507) do
+ActiveRecord::Schema.define(version: 20160131174317) do
+
+  create_table "frames", force: :cascade do |t|
+    t.integer  "score",      default: 0
+    t.boolean  "closed",     default: false
+    t.integer  "game_id"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  add_index "frames", ["game_id"], name: "index_frames_on_game_id"
 
   create_table "games", force: :cascade do |t|
-    t.integer  "total"
+    t.integer  "score",      default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "closed",     default: false
+  end
+
+  create_table "throws", force: :cascade do |t|
+    t.integer  "pins"
+    t.boolean  "strike",     default: false
+    t.boolean  "spare",      default: false
+    t.integer  "frame_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "throws", ["frame_id"], name: "index_throws_on_frame_id"
 
 end
