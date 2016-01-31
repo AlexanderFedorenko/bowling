@@ -37,52 +37,55 @@
     %tr
       %td{class: 'input-cell no-border'} &nbsp;
       %td{class: 'input-cell'}
-        X
+        = @game.frames[0].decorated_pins(0)
       %td{class: 'input-cell'}
+        = @game.frames[0].decorated_pins(1)
       %td{class: 'input-cell no-border'} &nbsp;
       %td{class: 'input-cell'}
-        7
+        = @game.frames[1]&.decorated_pins(0)
       %td{class: 'input-cell'}
-        \/
+        = @game.frames[1]&.decorated_pins(1)
       %td{class: 'input-cell no-border'} &nbsp;
       %td{class: 'input-cell'}
-        8
+        = @game.frames[2]&.decorated_pins(0)
       %td{class: 'input-cell'}
-        1
+        = @game.frames[2]&.decorated_pins(1)
       %td{class: 'input-cell no-border'} &nbsp;
       %td{class: 'input-cell'}
-        7
+        = @game.frames[3]&.decorated_pins(0)
       %td{class: 'input-cell'}
-        \/
+        = @game.frames[3]&.decorated_pins(1)
       %td{class: 'input-cell no-border'} &nbsp;
       %td{class: 'input-cell'}
-        5
+        = @game.frames[4]&.decorated_pins(0)
       %td{class: 'input-cell'}
-        0
+        = @game.frames[4]&.decorated_pins(1)
       %td{class: 'input-cell no-border'} &nbsp;
       %td{class: 'input-cell'}
-        0
+        = @game.frames[5]&.decorated_pins(0)
       %td{class: 'input-cell'}
-        6
+        = @game.frames[5]&.decorated_pins(1)
       %td{class: 'input-cell no-border'} &nbsp;
       %td{class: 'input-cell'}
-        X
+        = @game.frames[6]&.decorated_pins(0)
       %td{class: 'input-cell'}
+        = @game.frames[6]&.decorated_pins(1)
       %td{class: 'input-cell no-border'} &nbsp;
       %td{class: 'input-cell'}
-        X
+        = @game.frames[7]&.decorated_pins(0)
       %td{class: 'input-cell'}
+        = @game.frames[7]&.decorated_pins(1)
       %td{class: 'input-cell no-border'} &nbsp;
       %td{class: 'input-cell'}
-        8
+        = @game.frames[8]&.decorated_pins(0)
       %td{class: 'input-cell'}
-        0
+        = @game.frames[8]&.decorated_pins(1)
       %td{class: 'input-cell'}
-        X
+        = @game.frames[9]&.decorated_pins(0)
       %td{class: 'input-cell'}
-        X
+        = @game.frames[9]&.decorated_pins(1)
       %td{class: 'input-cell'}
-        X
+        = @game.frames[9]&.decorated_pins(2)
       %td{class: 'input-cell no-border', colspan: 3} &nbsp;
     %tr
       %td{class: 'result-cell', colspan: 3}

@@ -8,4 +8,14 @@ class Throw < ActiveRecord::Base
   def update_frame_score
     self.frame.update_score
   end
+
+  def decorate
+    if self.strike?
+      'X'
+    elsif self.spare?
+      '/'
+    else
+      self.pins
+    end
+  end
 end
