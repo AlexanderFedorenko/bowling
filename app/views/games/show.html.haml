@@ -2,12 +2,18 @@
   %h3
     Current Game
 
-%section
-  .submit-container
-    = form_for @throw do |f|
-      = f.hidden_field :frame_id, value: @game.current_frame.id
-      = f.number_field :pins, placeholder: 'Knocked pins'
-      = f.submit 'Submit Throw'
+- if @game.closed
+  .extended-mixtapes-header
+    %h3.warning
+      This game is closed
+
+- else
+  %section
+    .submit-container
+      = form_for @throw do |f|
+        = f.hidden_field :frame_id, value: @game.current_frame.id
+        = f.number_field :pins, placeholder: 'Knocked pins', autofocus: 'autofocus'
+        = f.submit 'Submit Throw'
 
 - if flash[:errors]
   .extended-mixtapes-header
