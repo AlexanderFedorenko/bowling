@@ -32,6 +32,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+group :production do
+  # Use PostgreSQL as the database for Active Record
+  gem 'pg'
+end
+
 # Front-end gems
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap', '~>3'
