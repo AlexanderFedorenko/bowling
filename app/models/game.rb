@@ -1,5 +1,5 @@
 class Game < ActiveRecord::Base
-  has_many :frames
+  has_many :frames, -> { order(:id) }
 
   after_create :generate_frame
 

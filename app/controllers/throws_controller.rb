@@ -27,7 +27,7 @@ class ThrowsController < ApplicationController
     if @throw.save
       redirect_to @throw.frame.game
     else
-      redirect_to @throw.game, :flash => { :errors => @throw.errors.full_messages }
+      redirect_to @throw.frame.game, :flash => { :errors => @throw.errors.full_messages }
     end
   end
 

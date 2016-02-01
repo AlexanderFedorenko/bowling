@@ -3,8 +3,18 @@ class Throw < ActiveRecord::Base
 
   validates :pins, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 10 }
 
+  validate :throws_pins_sum_is_less_than_or_equal_to_ten
+
   before_save :set_strike_and_spare_flags
   after_save :update_frames_score
+
+  def throws_pins_sum_is_less_than_or_equal_to_ten
+    if self.frame.game.frames[9].present?
+      # TODO Validation rule for last frame
+    elsif self.frame.throws.count > 0 and (self.frame.throws[0].pins + self.pins > 10)
+      errors.add(:pins, 'Total pins number in a frame must be 10')
+    end
+  end
 
   def set_strike_and_spare_flags
     if self.pins == 10
